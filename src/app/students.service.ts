@@ -19,4 +19,8 @@ export class StudentsService {
     return this.http.delete(this.baseUrl+'delete.php?id='+id);
 
   }
+
+  createStudents(student:any){
+    return this.http.post(this.baseUrl+'insert.php',student);
+  }
 }

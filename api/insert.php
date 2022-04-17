@@ -2,9 +2,17 @@
 error_reporting(E_ERROR);
 header("Access-Control-Allow-Origin:*");
 header("Access-Control-Allow-Headers:access");
-header("Access-Control-Allow-Method:POST");
-header("Access-Control-Allow-Credentials:true");
+header("Access-Control-Allow-Methods:POST");
 header("Content-Type:application/json;charset=UTF-8");
+header("Access-Control-Allow-Headers:Content-Type,Access-Control-Allow-Headers,Authorization,X-Requested-With");
+
+
+
+$method =$_SERVER['REQUEST_METHOD'];
+
+if($method =="OPTIONS"){
+    die();
+}
 
 if($_SERVER['REQUEST_METHOD'] !=='POST') :
     http_response_code(405);
@@ -19,6 +27,12 @@ require 'db_connect.php';
 $database = new Operations();
 $conn =$database->dbConnection();
 $data = json_decode(file_get_contents("php://input"));
+
+$hobbies = $data->hobbyField;
+$hobbies_list = '';
+foreach($hobbies as $hobby){
+    $hobbies_list .=$hobby.',';
+}
 
 if(!isset($data->first_name) || !isset($data->last_name)||!isset($data->email))  : 
     echo json_encode([
@@ -45,7 +59,7 @@ try{
     $email =htmlspecialchars(trim($data->email));
     $password=htmlspecialchars(trim($data->password));
     $gender=$data->gender;
-    $hobbies=$data->hobbies;
+    $hobbies=$hobbies_list;
     $country =$data->country;
 
     $query ="INSERT INTO `students`(
