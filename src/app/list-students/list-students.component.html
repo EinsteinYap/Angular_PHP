@@ -1,0 +1,30 @@
+<table class="table table-striped">
+
+<thead class="bg-primary">
+<th>Student ID</th>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Email</th>
+<th>Gender</th>
+<th>Hobbies</th>
+<th>Country</th>
+<th >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Actions</th>
+
+
+</thead>
+<tbody>
+<tr *ngFor="let student of students;let i = index">
+    <td>{{ student.id }}</td>
+    <td>{{ student.first_name }}</td>
+    <td>{{ student.last_name }}</td>
+    <td>{{ student.email }}</td>
+    <td>{{ student.gender }}</td>
+    <td>{{ student.hobbies }}</td>
+    <td>{{ student.country }}</td>
+<td><button class="btn btn-warning">Edit</button> <button class="btn btn-danger bl" (click)="deleteStudent(student.id)">Delete</button></td>
+  
+</tr>
+
+
+</tbody>
+</table>

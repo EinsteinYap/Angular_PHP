@@ -1,0 +1,53 @@
+<div class="container">
+  <div><h1>Add New Student</h1></div>
+  <form [formGroup]="addForm" novalidate class="form">
+    <div class="row">
+      <div class="col-md-6">First Name</div>
+      <div class="col-md-6"><input type="text" name="first_name" formControlName="first_name"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">Last Name</div>
+        <div class="col-md-6"><input type="text" name="last_name" formControlName="last_name"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">Email</div>
+        <div class="col-md-6"><input type="text" name="email" formControlName="email"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">Password</div>
+        <div class="col-md-6"><input type="text" name="password" formControlName="password"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">Gender</div>
+        <div class="col-md-6">
+            Male: <input formControlName="gender" type="radio" name="gender" value="male">
+            Female: <input formControlName="gender" type="radio" name="gender" value="female">
+
+        </div>
+      </div>
+
+      <!-- <div class="row">
+        <div class="col-md-6">Hobbies</div>
+        <div class="col-md-6"><input type="text" name="hobbies" formControlName="hobbies"></div>
+      </div> -->
+
+      <div class="row">
+        <div class="col-md-6">Country</div>
+        <div class="col-md-6">
+            <select formControlName="country" name="country">
+                <option value="india">India</option>
+                <option value="china">China</option>
+                <option value="usa">USA</option>
+
+            </select>
+
+        </div>
+      </div>
+
+  </form>
+
+</div>
