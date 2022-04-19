@@ -21,7 +21,7 @@ export class ListStudentsComponent implements OnInit {
   }
   deleteStudent(id:any){
     console.log(id)
-  this.studentservice.deleteStudents(id).subscribe(data=>{
+  this.studentservice.deleteStudent(id).subscribe((data:any)=>{
     this.students = this.students.filter((u:any)=> u.id!==id);
   })
   }

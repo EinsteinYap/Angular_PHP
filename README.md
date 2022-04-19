@@ -1,6 +1,9 @@
 # PhpCrud
 
-Copy and paste the RESTapi api folder to your xampp folder first. 
+1st Copy and paste the RESTapi "api" folder to your xampp folder first.
+
+2nd copy and paste the registration.sql to xammp SQL querty to generate all the fileds. 
+then start steps below. 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
 

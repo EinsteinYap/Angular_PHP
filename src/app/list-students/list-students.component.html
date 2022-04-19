@@ -21,10 +21,13 @@
     <td>{{ student.gender }}</td>
     <td>{{ student.hobbies }}</td>
     <td>{{ student.country }}</td>
-<td><button class="btn btn-warning">Edit</button> <button class="btn btn-danger bl" (click)="deleteStudent(student.id)">Delete</button></td>
+<td><a href="edit/{{ student.id }}" class="btn btn-success">Edit</a> <button class="btn btn-danger bl" (click)="deleteStudent(student.id)">Delete</button></td>
   
 </tr>
 
 
 </tbody>
 </table>
+<div class="text-center">
+<a href="add-student" class="btn btn-warning" >Add New Student</a>
+</div>

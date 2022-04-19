@@ -9,18 +9,26 @@ export class StudentsService {
 
   baseUrl: string = 'http://localhost/api/';
 
-  getStudents(){
+  getStudents() {
     return this.http.get<Students[]>(this.baseUrl+'view.php');
+  } 
 
-  }
-
-  deleteStudents(id:any){
+  getSingleStudent(id:any) {
+    return this.http.get<Students[]>(this.baseUrl+'view.php?id='+id);
+  } 
+  
+  deleteStudent(id:any) {
     console.log(id);
-    return this.http.delete(this.baseUrl+'delete.php?id='+id);
+    return this.http.delete(this.baseUrl+'delete.php?id='+ id);  
+  }  
 
-  }
+  createStudent(student:any) {
+  //  console.log(id);
+    return this.http.post(this.baseUrl+'insert.php', student);  
+  }  
 
-  createStudents(student:any){
-    return this.http.post(this.baseUrl+'insert.php',student);
-  }
+  editStudent(student:any) {
+    //  console.log(id);
+      return this.http.put(this.baseUrl+'update.php', student);  
+    }  
 }
